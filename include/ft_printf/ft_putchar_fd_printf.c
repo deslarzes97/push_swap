@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd_printf.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adeslarz <adeslarz@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 19:06:34 by adeslarz          #+#    #+#             */
-/*   Updated: 2021/12/14 17:19:30 by adeslarz         ###   ########.fr       */
+/*   Created: 2021/10/19 19:45:05 by desa              #+#    #+#             */
+/*   Updated: 2021/12/14 16:08:23 by adeslarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "./include/libft/libft.h"
-# include "./include/ft_printf/ft_printf.h"
-
-typedef struct s_stack_a
+void	ft_putchar_fd_printf(char c, int *count)
 {
-	int	*number;
-	int	len;
-}				t_stack_a;
-
-typedef struct s_stack
-{
-	t_stack_a		*stack_a;
-	t_stack_a		*stack_b;
-}				t_stack;
-
-int		error_msg(char *str);
-int		check_input(char *str);
-#endif
+	*count += 1;
+	write(1, &c, 1);
+}

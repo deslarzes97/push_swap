@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd_printf.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adeslarz <adeslarz@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 19:06:34 by adeslarz          #+#    #+#             */
-/*   Updated: 2021/12/14 17:19:30 by adeslarz         ###   ########.fr       */
+/*   Created: 2021/10/19 19:48:57 by adeslarz          #+#    #+#             */
+/*   Updated: 2021/12/14 16:11:01 by adeslarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "./include/libft/libft.h"
-# include "./include/ft_printf/ft_printf.h"
-
-typedef struct s_stack_a
+//Fonction qui imprime une chaîne de caractères dans le terminal.
+void	ft_putstr_fd_printf(const char *s, int *count)
 {
-	int	*number;
-	int	len;
-}				t_stack_a;
+	int	i;
 
-typedef struct s_stack
-{
-	t_stack_a		*stack_a;
-	t_stack_a		*stack_b;
-}				t_stack;
-
-int		error_msg(char *str);
-int		check_input(char *str);
-#endif
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		*count += 6;
+	}
+	else
+	{
+		i = ft_strlen_printf(s);
+		*count += i;
+		write(1, s, i);
+	}
+}

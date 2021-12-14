@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strlen_printf.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adeslarz <adeslarz@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 19:06:34 by adeslarz          #+#    #+#             */
-/*   Updated: 2021/12/14 17:19:30 by adeslarz         ###   ########.fr       */
+/*   Created: 2021/10/12 11:14:11 by adeslarz          #+#    #+#             */
+/*   Updated: 2021/12/14 16:09:04 by adeslarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "./include/libft/libft.h"
-# include "./include/ft_printf/ft_printf.h"
-
-typedef struct s_stack_a
+//Fonction qui calcule la taille d'une chaine de caractère.
+size_t	ft_strlen_printf(const char *str)
 {
-	int	*number;
-	int	len;
-}				t_stack_a;
+	size_t	i;
 
-typedef struct s_stack
-{
-	t_stack_a		*stack_a;
-	t_stack_a		*stack_b;
-}				t_stack;
-
-int		error_msg(char *str);
-int		check_input(char *str);
-#endif
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adeslarz <adeslarz@42lausanne.ch>          +#+  +:+       +#+         #
+#    By: desa <desa@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 11:47:01 by adeslarz          #+#    #+#              #
-#    Updated: 2021/12/09 20:47:10 by adeslarz         ###   ########.fr        #
+#    Updated: 2021/12/12 13:12:54 by desa             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS =	main.c\
 
 NAME		= push_swap
 
-CFLAGS 		= -Wall -Wextra -Werror
+CFLAGS 		= -g -fsanitize=address -Wall -Wextra -Werror
 
 OBJS 		= ${SRCS:.c=.o}
 

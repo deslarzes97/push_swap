@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adeslarz <adeslarz@42lausanne.ch>          +#+  +:+       +#+         #
+#    By: desa <desa@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 11:47:01 by adeslarz          #+#    #+#              #
-#    Updated: 2021/12/14 17:14:52 by adeslarz         ###   ########.fr        #
+#    Updated: 2021/12/14 22:27:55 by desa             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS =	main.c\
 		ft_check_input.c\
 		ft_error.c\
+		ft_malloc.c\
 
 NAME		= push_swap
 

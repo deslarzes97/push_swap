@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adeslarz <adeslarz@42lausanne.ch>          +#+  +:+       +#+        */
+/*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 15:48:45 by adeslarz          #+#    #+#             */
-/*   Updated: 2021/12/17 18:05:00 by adeslarz         ###   ########.fr       */
+/*   Updated: 2021/12/18 19:00:47 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	check_args(long int nbr)
+{
+	if (nbr < -2147483648 || nbr > 2147483647)
+		return (0);
+	else
+		return (1);
+}
 
 int	check_input(char *str)
 {
@@ -22,25 +30,21 @@ int	check_input(char *str)
 	i = 0;
 	while (temp[i])
 		i++;
-	ft_printf("index = %i\n", i);
 	stack = malloc(sizeof(t_stack));
-	//stack->stack_a = malloc(sizeof(t_stack_a));
-	//stack->stack_a->number = malloc(sizeof(int) * i);
 	if (!stack)
 		return (0);
 	ft_malloc(stack, i);
-	i = 0;
-	while (temp[i])
+	i = -1;
+	while (temp[++i])
 	{
-		stack->stack_a->number[i] = ft_atoi(temp[i]);
-		printf("value = %i\n", stack->stack_a->number[i]);
-		/*if (check_args(&stack->stack_a->number[i]) == 0)
+		if (check_args(ft_atoi(temp[i])) == 0)
 		{
 			free(temp);
-			error_msg("N'est pas un (int).");
-		}*/
-		//free(temp);
-		i++;
+			error_msg("N'est pas un (int).\n");
+		}
+		stack->stack_a->number[i] = ft_atoi(temp[i]);
+		printf("value = %li\n", stack->stack_a->number[i]);
+		free(temp[i]);
 	}
 	return (1);
 }

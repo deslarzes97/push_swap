@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adeslarz <adeslarz@42lausanne.ch>          +#+  +:+       +#+        */
+/*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:06:34 by adeslarz          #+#    #+#             */
-/*   Updated: 2021/12/17 17:54:22 by adeslarz         ###   ########.fr       */
+/*   Updated: 2021/12/17 21:37:21 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 typedef struct s_stack_a
 {
-	int	*number;
+	long int	*number;
 	int	len;
 }				t_stack_a;
 
@@ -33,4 +33,5 @@ typedef struct s_stack
 int		error_msg(char *str);
 int		check_input(char *str);
 void	ft_malloc(t_stack *stack, int i);
+void	ft_free(t_stack *stack);
 #endif

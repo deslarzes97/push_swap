@@ -6,7 +6,7 @@
 #    By: desa <desa@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 11:47:01 by adeslarz          #+#    #+#              #
-#    Updated: 2021/12/14 22:27:55 by desa             ###   ########.fr        #
+#    Updated: 2021/12/28 14:38:20 by desa             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,11 @@ SRCS =	main.c\
 		ft_check_input.c\
 		ft_error.c\
 		ft_malloc.c\
+		ft_push_swap_utils.c\
+		ft_swap.c\
+		ft_rotate.c\
+		ft_rev_rotate.c\
+		ft_push.c\
 
 NAME		= push_swap
 
@@ -60,5 +65,3 @@ fclean: 	clean
 re:			fclean all
 
 .PHONY: 	all clean fclean re
-
-# -g -fsanitize=address

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adeslarz <adeslarz@42lausanne.ch>          +#+  +:+       +#+        */
+/*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:06:34 by adeslarz          #+#    #+#             */
-/*   Updated: 2021/12/20 16:06:41 by adeslarz         ###   ########.fr       */
+/*   Updated: 2021/12/28 17:17:46 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,17 @@ typedef struct s_stack
 }				t_stack;
 
 int		error_msg(char *str, t_stack *stack);
-int		check_input(char *str);
+int		check_input(char *str, t_stack	*stack);
 void	ft_malloc(t_stack *stack, int i);
 void	ft_free(t_stack *stack);
 void	ft_clean_exit(t_stack *stack);
+int		get_int_min(t_stack *stack);
+int		get_int_max(t_stack *stack);
+void	swap_a(t_stack *stack);
+void	swap_b(t_stack *stack);
+void	rotate_a(t_stack *stack);
+void	rotate_b(t_stack *stack);
+void	rev_rotate_a(t_stack *stack);
+void	rev_rotate_b(t_stack *stack);
+int		*push_b(t_stack *stack);
 #endif

@@ -1,39 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_push_swap_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 14:51:45 by desa              #+#    #+#             */
-/*   Updated: 2021/12/21 18:15:11 by desa             ###   ########.fr       */
+/*   Created: 2021/12/20 20:17:43 by desa              #+#    #+#             */
+/*   Updated: 2021/12/20 20:41:35 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_a(t_stack *stack)
+int	get_int_min(t_stack *stack)
 {
-	int	temp;
+	int	i;
+	int	min;
 
-	if (stack->stack_a->len >= 2)
+	i = 0;
+	min = stack->stack_a->number[i];
+	while (i <= stack->stack_a->len)
 	{
-		temp = stack->stack_a->number[0];
-		stack->stack_a->number[0] = stack->stack_a->number[1];
-		stack->stack_a->number[1] = temp;
+
+		if (min > stack->stack_a->number[i])
+			min = stack->stack_a->number[i];
+		i++;
 	}
-	ft_putstr_fd("sa\n", 1);
+	return (min);
 }
 
-void	swap_b(t_stack *stack)
+int	get_int_max(t_stack *stack)
 {
-	int	temp;
+	int	i;
+	int	max;
 
-	if (stack->stack_b->len >= 2)
+	i = 0;
+	max = stack->stack_a->number[i];
+	while (i <= stack->stack_a->len)
 	{
-		temp = stack->stack_b->number[0];
-		stack->stack_b->number[0] = stack->stack_b->number[1];
-		stack->stack_b->number[1] = temp;
+
+		if (max < stack->stack_a->number[i])
+			max = stack->stack_a->number[i];
+		i++;
 	}
-	ft_putstr_fd("sb\n", 1);
+	return (max);
+
 }

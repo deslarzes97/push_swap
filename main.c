@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:05:57 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/03 17:25:12 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/03 19:36:47 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ int	main (int argc, char **argv)
 		check_input(argv[1], stack);
 	else
 		check_input(*argv, stack);
-	while (++i <= stack->stack_a->len)
-		printf("number[i]%i\n", stack->stack_a->number[i]);
 	copy = get_ordered_array(stack, copy);
 	stack->stack_a->number = to_radix(stack, copy);
 	preliminary_check(stack);
@@ -38,7 +36,7 @@ int	main (int argc, char **argv)
 		ft_algo(stack);
 	i = -1;
 	printf("____APRES____");
-	while (++i <= stack->stack_a->len)
+	while (++i < stack->stack_a->len)
 		printf("number[i]= %i\n", stack->stack_a->number[i]);
 	ft_free(stack);
 	return (0);

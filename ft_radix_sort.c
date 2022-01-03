@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 14:07:04 by desa              #+#    #+#             */
-/*   Updated: 2022/01/03 14:19:15 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/03 18:53:10 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,19 @@ int	*to_radix(t_stack *stack, int *copy)
 	int	i;
 	int	j;
 	int	len;
-	int	*new_tab;
+	int	*new_stack;
 
 	i = 0;
 	j = 0;
 	len = stack->stack_a->len;
-	new_tab = malloc(sizeof(int) * len);
+	new_stack = malloc(sizeof(int) * len);
 	while (i < len)
 	{
 		while (j < len)
 		{
 			if (stack->stack_a->number[i] == copy[j])
 			{
-				new_tab[i] = j;
+				new_stack[i] = j;
 			}
 			j++;
 		}
@@ -73,5 +73,5 @@ int	*to_radix(t_stack *stack, int *copy)
 		i++;
 	}
 	free(stack->stack_a->number);
-	return (new_tab);
+	return (new_stack);
 }

@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:06:34 by adeslarz          #+#    #+#             */
-/*   Updated: 2021/12/28 17:17:46 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/02 20:18:49 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ void	rotate_b(t_stack *stack);
 void	rev_rotate_a(t_stack *stack);
 void	rev_rotate_b(t_stack *stack);
 int		*push_b(t_stack *stack);
+int		*push_a(t_stack *stack);
 #endif

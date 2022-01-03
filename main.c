@@ -6,18 +6,20 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:05:57 by adeslarz          #+#    #+#             */
-/*   Updated: 2021/12/30 17:24:46 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/03 17:25:12 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	main (int argc, char **argv)
 {
 	t_stack	*stack;
-	int	i;
+	int		*copy;
+	int		i;
 
 	i = -1;
+	copy = NULL;
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (0);
@@ -27,5 +29,17 @@ int	main(int argc, char **argv)
 		check_input(argv[1], stack);
 	else
 		check_input(*argv, stack);
+	while (++i <= stack->stack_a->len)
+		printf("number[i]%i\n", stack->stack_a->number[i]);
+	copy = get_ordered_array(stack, copy);
+	stack->stack_a->number = to_radix(stack, copy);
+	preliminary_check(stack);
+	if (!check_order(stack))
+		ft_algo(stack);
+	i = -1;
+	printf("____APRES____");
+	while (++i <= stack->stack_a->len)
+		printf("number[i]= %i\n", stack->stack_a->number[i]);
+	ft_free(stack);
 	return (0);
 }

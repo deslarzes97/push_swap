@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:51:51 by desa              #+#    #+#             */
-/*   Updated: 2021/12/21 21:22:42 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/03 14:28:38 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	rotate_a(t_stack *stack)
 		stack->stack_a->number[i - 1] = temp;
 		i++;
 	}
+	ft_putstr_fd("ra\n", 1);
 }
 
 void	rotate_b(t_stack *stack)
@@ -49,4 +50,5 @@ void	rotate_b(t_stack *stack)
 		stack->stack_b->number[i - 1] = temp;
 		i++;
 	}
+	ft_putstr_fd("rb\n", 1);
 }

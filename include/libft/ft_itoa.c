@@ -15,10 +15,8 @@
 
 static int	ft_len_nbr(int nbr)
 {
-	int		i;
 	int		size;
 
-	i = 0;
 	size = 0;
 	if (nbr < 0)
 	{

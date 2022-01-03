@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:51:55 by desa              #+#    #+#             */
-/*   Updated: 2022/01/02 20:31:33 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/03 13:22:58 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,10 @@ int	*push_b(t_stack *stack)
 	stack->stack_b->len += 1;
 	stack->stack_a->len -= 1;
 	redefine_stack_a(stack);
+	ft_putstr_fd("pb\n", 1);
 	return (new_stack);
 }
+
 
 int	*push_a(t_stack *stack)
 {
@@ -73,5 +75,6 @@ int	*push_a(t_stack *stack)
 	stack->stack_a->len += 1;
 	stack->stack_b->len -= 1;
 	redefine_stack_b(stack);
+	ft_putstr_fd("pa\n", 1);
 	return (new_stack);
 }

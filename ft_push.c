@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:51:55 by desa              #+#    #+#             */
-/*   Updated: 2022/01/03 19:21:25 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/04 22:56:58 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ static void	redefine_stack_a(t_stack *stack)
 {
 	int	i;
 
-	i = -1;
-	while (++i <= stack->stack_a->len)
+	i = 0;
+	while (i < stack->stack_a->len)
+	{
 		stack->stack_a->number[i] = stack->stack_a->number[i + 1];
+		i++;
+	}
 
 }
 
@@ -26,9 +29,12 @@ static void	redefine_stack_b(t_stack *stack)
 {
 	int	i;
 
-	i = -1;
-	while (++i <= stack->stack_b->len)
+	i = 0;
+	while (i < stack->stack_b->len)
+	{
 		stack->stack_b->number[i] = stack->stack_b->number[i + 1];
+		i++;
+	}
 
 }
 

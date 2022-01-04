@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:06:34 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/03 14:40:20 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/04 21:30:43 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ int		*push_a(t_stack *stack);
 void	ft_algo(t_stack *stack);
 int		*to_radix(t_stack *stack, int *copy);
 int		*get_ordered_array(t_stack *stack, int *copy);
-int		check_order(t_stack *stack);
+int		check_order(t_stack_a *stack);
 void	preliminary_check(t_stack *stack);
 #endif

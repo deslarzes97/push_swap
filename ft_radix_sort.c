@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 14:07:04 by desa              #+#    #+#             */
-/*   Updated: 2022/01/04 00:04:48 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/04 23:09:15 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	*get_ordered_array(t_stack *stack, int *copy)
 	i = -1;
 	j = 1;
 	len = stack->stack_a->len;
-	copy = malloc(sizeof(long int) * len + 1);
+	copy = malloc(sizeof(int) * len);
 	while (++i < len)
 		copy[i] = stack->stack_a->number[i];
 	i = 0;
@@ -58,7 +58,7 @@ int	*to_radix(t_stack *stack, int *copy)
 	i = 0;
 	j = 0;
 	len = stack->stack_a->len;
-	new_stack = malloc(sizeof(long int) * len + 1);
+	new_stack = malloc(sizeof(int) * len);
 	while (i < len)
 	{
 		while (j < len)

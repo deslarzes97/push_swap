@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:05:57 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/03 19:36:47 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/04 00:07:15 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,8 @@ int	main (int argc, char **argv)
 	if (!check_order(stack))
 		ft_algo(stack);
 	i = -1;
-	printf("____APRES____");
-	while (++i < stack->stack_a->len)
-		printf("number[i]= %i\n", stack->stack_a->number[i]);
+	while(++i < stack->stack_a->len)
+		printf("number[i] = %i\n", stack->stack_a->number[i]);
 	ft_free(stack);
 	return (0);
 }

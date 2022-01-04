@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 15:48:45 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/03 19:34:15 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/03 22:53:39 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	check_duplicate(long nbr, t_stack *stack)
 	{
 		if (stack->stack_a->number[i] == nbr)
 		{
-			error_msg("Doublons", stack);
+			error_msg("Doublons\n", stack);
 		}
 		else
 			i++;

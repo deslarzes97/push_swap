@@ -6,7 +6,7 @@
 #    By: desa <desa@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 11:47:01 by adeslarz          #+#    #+#              #
-#    Updated: 2022/01/03 23:12:21 by desa             ###   ########.fr        #
+#    Updated: 2022/01/05 14:40:29 by desa             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,18 +35,16 @@ RM 			= rm -f
 
 CC			= gcc
 
-FT_PRINTF_DIR	= ./include/ft_printf/
 LIBFT_DIR		= ./include/libft/
 
 LIBFT =  libft.a
-FT_PRINTF = libftprintf.a
 
-FRAMLIBS	= -L $(LIBFT_DIR) -lft -L $(FT_PRINTF_DIR) -lftprintf
+FRAMLIBS	= -L $(LIBFT_DIR) -lft
 
 all: ${LIBFT} ${FT_PRINTF} ${NAME}
 
 $(NAME): 	$(OBJS)
-			$(CC) $(CFLAGS) -I $(LIBFT_DIR) -I $(FT_PRINTF_DIR) -o $(NAME) $(OBJS) $(FRAMLIBS)
+			$(CC) $(CFLAGS) -I $(LIBFT_DIR) -o $(NAME) $(OBJS) $(FRAMLIBS)
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
@@ -60,10 +58,9 @@ $(FT_PRINTF):
 clean:
 			${RM} ${OBJS}
 			make -C $(LIBFT_DIR) clean
-			make -C $(FT_PRINTF_DIR) clean
 
 fclean: 	clean
-			${RM} ${NAME} ${LIBFT_DIR}${LIBFT} ${FT_PRINTF_DIR}${FT_PRINTF}
+			${RM} ${NAME} ${LIBFT_DIR}${LIBFT}
 
 re:			fclean all
 

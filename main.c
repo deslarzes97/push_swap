@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:05:57 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/04 21:34:40 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/05 16:05:38 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ int	main (int argc, char **argv)
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (0);
-	if (argc == 1)
+	if (argc-- == 1)
 		exit (0);
-	if (argc == 2)
-		check_input(argv[1], stack);
+	if (argc == 1)
+		check_input_string(argv[1], stack);
 	else
-		check_input(*argv, stack);
+		check_input_args(argv, argc, stack);
 	copy = get_ordered_array(stack, copy);
 	stack->stack_a->number = to_radix(stack, copy);
 	preliminary_check(stack);

@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:06:34 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/04 21:30:43 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/05 14:44:06 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "./include/libft/libft.h"
-# include "./include/ft_printf/ft_printf.h"
+# include <stdio.h>
 
 typedef struct s_stack_a
 {
@@ -31,7 +31,8 @@ typedef struct s_stack
 }				t_stack;
 
 int		error_msg(char *str, t_stack *stack);
-int		check_input(char *str, t_stack	*stack);
+int		check_input_string(char *str, t_stack *stack);
+int		check_input_args(char **args, int argc, t_stack *stack);
 void	ft_malloc(t_stack *stack, int i);
 void	ft_free(t_stack *stack);
 void	ft_clean_exit(t_stack *stack);

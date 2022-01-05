@@ -6,13 +6,13 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:51:45 by desa              #+#    #+#             */
-/*   Updated: 2022/01/04 22:23:46 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/05 19:21:40 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_a(t_stack *stack)
+void	swap_a(t_stacks *stack)
 {
 	int	temp;
 
@@ -25,7 +25,7 @@ void	swap_a(t_stack *stack)
 	ft_putstr_fd("sa\n", 1);
 }
 
-void	swap_b(t_stack *stack)
+void	swap_b(t_stacks *stack)
 {
 	int	temp;
 

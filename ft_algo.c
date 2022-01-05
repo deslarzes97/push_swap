@@ -6,13 +6,13 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 11:43:22 by desa              #+#    #+#             */
-/*   Updated: 2022/01/03 13:32:19 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/05 19:16:38 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	get_max_bits(t_stack *stack)
+static int	get_max_bits(t_stacks *stack)
 {
 	int	temp;
 	int	max_bits;
@@ -24,7 +24,7 @@ static int	get_max_bits(t_stack *stack)
 	return (max_bits);
 }
 
-void	ft_algo(t_stack *stack)
+void	ft_algo(t_stacks *stack)
 {
 	int	j;
 	int	i;

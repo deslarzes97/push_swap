@@ -6,39 +6,26 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:51:55 by desa              #+#    #+#             */
-/*   Updated: 2022/01/04 22:56:58 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/05 19:19:47 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	redefine_stack_a(t_stack *stack)
+static void	redefine_stack(t_stack *stack)
 {
 	int	i;
 
 	i = 0;
-	while (i < stack->stack_a->len)
+	while (i < stack->len)
 	{
-		stack->stack_a->number[i] = stack->stack_a->number[i + 1];
+		stack->number[i] = stack->number[i + 1];
 		i++;
 	}
 
 }
 
-static void	redefine_stack_b(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while (i < stack->stack_b->len)
-	{
-		stack->stack_b->number[i] = stack->stack_b->number[i + 1];
-		i++;
-	}
-
-}
-
-int	*push_a(t_stack *stack)
+int	*push_a(t_stacks *stack)
 {
 	int	*new_stack;
 	int	i;
@@ -56,12 +43,12 @@ int	*push_a(t_stack *stack)
 	free(stack->stack_a->number);
 	stack->stack_a->len += 1;
 	stack->stack_b->len -= 1;
-	redefine_stack_b(stack);
+	redefine_stack(stack->stack_b);
 	ft_putstr_fd("pa\n", 1);
 	return (new_stack);
 }
 
-int	*push_b(t_stack *stack)
+int	*push_b(t_stacks *stack)
 {
 	int	*new_stack;
 	int	i;
@@ -79,7 +66,7 @@ int	*push_b(t_stack *stack)
 	free(stack->stack_b->number);
 	stack->stack_b->len += 1;
 	stack->stack_a->len -= 1;
-	redefine_stack_a(stack);
+	redefine_stack(stack->stack_a);
 	ft_putstr_fd("pb\n", 1);
 	return (new_stack);
 }

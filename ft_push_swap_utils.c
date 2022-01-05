@@ -6,13 +6,13 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 20:17:43 by desa              #+#    #+#             */
-/*   Updated: 2022/01/05 15:58:30 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/05 19:14:46 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_order(t_stack_a *stack)
+int	check_order(t_stack *stack)
 {
 	int	i;
 	int	temp;
@@ -29,7 +29,7 @@ int	check_order(t_stack_a *stack)
 	return (1);
 }
 
-int	get_int_min(t_stack *stack)
+int	get_int_min(t_stacks *stack)
 {
 	int	i;
 	int	min;
@@ -46,7 +46,7 @@ int	get_int_min(t_stack *stack)
 	return (min);
 }
 
-int	get_int_max(t_stack *stack)
+int	get_int_max(t_stacks *stack)
 {
 	int	i;
 	int	max;

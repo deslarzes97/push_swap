@@ -6,13 +6,13 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 14:21:54 by desa              #+#    #+#             */
-/*   Updated: 2022/01/04 21:33:58 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/05 19:13:24 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	solve_three(t_stack *stack)
+static void	solve_three(t_stacks *stack)
 {
 	if (stack->stack_a->number[0] > stack->stack_a->number[1]
 		&& stack->stack_a->number[0] > stack->stack_a->number[2])
@@ -36,7 +36,7 @@ static void	solve_three(t_stack *stack)
 		rev_rotate_a(stack);
 }
 
-static void	solve_four(t_stack *stack)
+static void	solve_four(t_stacks *stack)
 {
 	int	min;
 	int	i;
@@ -61,7 +61,7 @@ static void	solve_four(t_stack *stack)
 	stack->stack_a->number = push_a(stack);
 }
 
-static void	solve_five_2(t_stack *stack)
+static void	solve_five_2(t_stacks *stack)
 {
 	if (!check_order(stack->stack_a))
 		solve_three(stack);
@@ -72,7 +72,7 @@ static void	solve_five_2(t_stack *stack)
 	rotate_a(stack);
 }
 
-static void	solve_five(t_stack *stack)
+static void	solve_five(t_stacks *stack)
 {
 	int	min;
 	int	max;
@@ -99,7 +99,7 @@ static void	solve_five(t_stack *stack)
 	solve_five_2(stack);
 }
 
-void	preliminary_check(t_stack *stack)
+void	preliminary_check(t_stacks *stack)
 {
 	if (stack->stack_a->len == 2 && !check_order(stack->stack_a))
 		swap_a(stack);

@@ -6,7 +6,7 @@
 #    By: desa <desa@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 11:47:01 by adeslarz          #+#    #+#              #
-#    Updated: 2022/01/05 14:40:29 by desa             ###   ########.fr        #
+#    Updated: 2022/01/05 18:01:19 by desa             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS =	main.c\
 
 NAME		= push_swap
 
-CFLAGS 		= -g -fsanitize=address -Wall -Wextra -Werror
+CFLAGS 		= -Wall -Wextra -Werror
 
 OBJS 		= ${SRCS:.c=.o}
 
@@ -65,3 +65,5 @@ fclean: 	clean
 re:			fclean all
 
 .PHONY: 	all clean fclean re
+
+#-g -fsanitize=address

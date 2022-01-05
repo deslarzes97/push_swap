@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:05:57 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/05 16:05:38 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/05 19:54:55 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,28 @@
 
 int	main (int argc, char **argv)
 {
-	t_stack	*stack;
-	int		*copy;
-	int		i;
+	t_stacks	stacks;
+	int			*copy;
 
-	i = -1;
 	copy = NULL;
-	stack = malloc(sizeof(t_stack));
-	if (!stack)
+	stacks.stack_a = malloc(sizeof(t_stack));
+	stacks.stack_b = malloc(sizeof(t_stack));
+	if (!stacks.stack_a || !stacks.stack_b)
 		return (0);
-	if (argc-- == 1)
-		exit (0);
 	if (argc == 1)
-		check_input_string(argv[1], stack);
+		exit (0);
+	if (argc == 2)
+		check_input_string(argv, stacks.stack_a);
 	else
-		check_input_args(argv, argc, stack);
-	copy = get_ordered_array(stack, copy);
-	stack->stack_a->number = to_radix(stack, copy);
-	preliminary_check(stack);
-	if (!check_order(stack->stack_a))
-		ft_algo(stack);
-	ft_free(stack);
+	{
+		argc--;
+		check_input_args(argv, argc, stacks.stack_a);
+	}
+	copy = get_ordered_array(&stacks, copy);
+	stacks.stack_a->number = to_radix(&stacks, copy);
+	preliminary_check(&stacks);
+	if (!check_order(stacks.stack_a))
+		ft_algo(&stacks);
+	ft_free(&stacks);
 	return (0);
 }

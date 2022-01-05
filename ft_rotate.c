@@ -6,14 +6,14 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:51:51 by desa              #+#    #+#             */
-/*   Updated: 2022/01/04 22:18:18 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/05 19:20:56 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //Décale tout les éléments du tableau de 1 vers le haut.
-void	rotate_a(t_stack *stack)
+void	rotate_a(t_stacks *stack)
 {
 	int	i;
 	int	temp;
@@ -33,7 +33,7 @@ void	rotate_a(t_stack *stack)
 	ft_putstr_fd("ra\n", 1);
 }
 
-void	rotate_b(t_stack *stack)
+void	rotate_b(t_stacks *stack)
 {
 	int	i;
 	int	temp;

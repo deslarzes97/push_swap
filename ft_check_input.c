@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 15:48:45 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/05 19:57:35 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/05 20:59:12 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,14 @@ void	check_input_string(char **argv, t_stack *stack)
 			!check_duplicate(stack->number, i))
 		{
 			free(stack->number);
-			error_msg("banane");
+			ft_putstr_fd("Error\n", 1);
+			exit(0);
 		}
 		free(temp[i]);
 		i++;
 	}
-	stack->len = i;
 	free(temp);
+	stack->len = i;
 }
 
 void	check_input_args(char **argv, int argc, t_stack *stack)
@@ -88,7 +89,8 @@ void	check_input_args(char **argv, int argc, t_stack *stack)
 			!check_duplicate(stack->number, i))
 		{
 			free(stack->number);
-			error_msg("");
+			ft_putstr_fd("Error\n", 1);
+			exit(0);
 		}
 		i++;
 		argc--;

@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 14:07:04 by desa              #+#    #+#             */
-/*   Updated: 2022/01/05 19:10:53 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/05 20:43:18 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_swap(int *number1, int *number2)
 	*number2 = temp;
 }
 
-int	*get_ordered_array(t_stacks *stack, int *temp)
+int	*get_ordered_array(t_stacks *stack, int *copy)
 {
 	int	len;
 	int	i;
@@ -30,22 +30,22 @@ int	*get_ordered_array(t_stacks *stack, int *temp)
 	i = -1;
 	j = 1;
 	len = stack->stack_a->len;
-	temp = malloc(sizeof(int) * len);
+	copy = malloc(sizeof(int) * len);
 	while (++i < len)
-		temp[i] = stack->stack_a->number[i];
+		copy[i] = stack->stack_a->number[i];
 	i = 0;
 	while (i < len)
 	{
 		while (j < len)
 		{
-			if (temp[i] > temp[j])
-				ft_swap(&temp[i], &temp[j]);
+			if (copy[i] > copy[j])
+				ft_swap(&copy[i], &copy[j]);
 			j++;
 		}
 		i++;
 		j = i + 1;
 	}
-	return (temp);
+	return (copy);
 }
 
 int	*to_radix(t_stacks *stack, int *copy)

@@ -6,13 +6,12 @@
 #    By: desa <desa@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 11:47:01 by adeslarz          #+#    #+#              #
-#    Updated: 2022/01/05 18:01:19 by desa             ###   ########.fr        #
+#    Updated: 2022/01/05 21:05:14 by desa             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS =	main.c\
 		ft_check_input.c\
-		ft_error.c\
 		ft_malloc.c\
 		ft_push_swap_utils.c\
 		ft_swap.c\

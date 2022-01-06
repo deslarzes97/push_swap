@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 14:21:54 by desa              #+#    #+#             */
-/*   Updated: 2022/01/05 19:13:24 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/05 21:57:24 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,9 @@ static void	solve_five(t_stacks *stack)
 
 void	preliminary_check(t_stacks *stack)
 {
-	if (stack->stack_a->len == 2 && !check_order(stack->stack_a))
+	if ((stack->stack_a->len == 2) && !check_order(stack->stack_a))
 		swap_a(stack);
-	else if (stack->stack_a->len == 3 && !check_order(stack->stack_a))
+	else if ((stack->stack_a->len == 3) && !check_order(stack->stack_a))
 		solve_three(stack);
 	else if ((stack->stack_a->len == 4)
 		&& !check_order(stack->stack_a))

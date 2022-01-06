@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 15:48:45 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/05 20:59:12 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/06 01:46:51 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,35 @@ static int	check_duplicate(int *nbr, int i)
 	return (1);
 }
 
+int	check_args_is_int_2(char *argv)
+{
+	int	i;
+
+	i = 0;
+	//if (argv[i] == ' ')
+		//return (0);
+	while (argv[i])
+	{
+		if (ft_isdigit(argv[i]) != 1)
+		 {
+			 if (argv[i] != '-')
+				return (0);
+		 }
+		i++;
+	}
+	return (1);
+}
+
 static int	check_args_is_int(char *argv, int *nbr, int i)
 {
 	long int temp;
 
+	if (check_args_is_int_2(argv) == 0)
+	{
+			//ft_putstr_fd("Error\n", 1);
+			fprintf(stderr,"Error\n");
+			exit(0);
+	}
 	if (argv[0] == '0')
 	{
 		nbr[i] = 0;
@@ -50,13 +75,49 @@ static int	check_args_is_int(char *argv, int *nbr, int i)
 	return (1);
 }
 
-void	check_input_string(char **argv, t_stack *stack)
+
+void	check_input_args(char **argv, int argc, t_stack *stack, int	check)
+{
+	int	i;
+	int	j;
+	(void) argc;
+	i = 0;
+	j = 0;
+	if (check == 1)
+		i = 1;
+	while (argv[j])
+		j++;
+	stack->number = malloc(sizeof(long int) * j);
+	while (argv[i])
+	{
+		if (!check_args_is_int(argv[i], stack->number, i) ||
+			!check_duplicate(stack->number, i))
+		{
+			free(stack->number);
+			//ft_putstr_fd("Error\n", stderr);
+			fprintf(stderr,"Error\n");
+			exit(0);
+		}
+		i++;
+		//argc--;
+	}
+	stack->len = i;
+}
+
+/*void	check_input_string(char **argv, t_stack *stack)
 {
 	int		i;
 	char	**temp;
 
-	temp = ft_split(argv[1], ' ');
 	i = 0;
+	if (argv[1][0] == ' ')
+	{
+		//free(stack->number);
+		//ft_putstr_fd("Error\n", 1);
+		fprintf(stderr,"Error\n");
+		exit(0);
+	}
+	temp = ft_split(argv[1], ' ');
 	while (temp[i])
 		i++;
 	stack->number = malloc(sizeof(long int) * i);
@@ -67,7 +128,8 @@ void	check_input_string(char **argv, t_stack *stack)
 			!check_duplicate(stack->number, i))
 		{
 			free(stack->number);
-			ft_putstr_fd("Error\n", 1);
+			//ft_putstr_fd("Error\n", stderr);
+			fprintf(stderr,"Error\n");
 			exit(0);
 		}
 		free(temp[i]);
@@ -75,25 +137,4 @@ void	check_input_string(char **argv, t_stack *stack)
 	}
 	free(temp);
 	stack->len = i;
-}
-
-void	check_input_args(char **argv, int argc, t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	stack->number = malloc(sizeof(long int) * argc);
-	while (argc)
-	{
-		if (!check_args_is_int(argv[i + 1], stack->number, i) ||
-			!check_duplicate(stack->number, i))
-		{
-			free(stack->number);
-			ft_putstr_fd("Error\n", 1);
-			exit(0);
-		}
-		i++;
-		argc--;
-	}
-	stack->len = i;
-}
+}*/

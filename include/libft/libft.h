@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 10:47:58 by adeslarz          #+#    #+#             */
-/*   Updated: 2021/12/17 22:09:51 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/05 22:45:28 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int			ft_toupper(int c);
 int			ft_tolower(int c);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_isprint(int c);
-int			ft_isdigit(int c);
+int			ft_isdigit(char c);
 int			ft_isascii(int c);
 int			ft_isalpha(int c);
 int			ft_isalnum(int c);

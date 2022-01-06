@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:06:34 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/05 20:43:32 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/06 01:17:17 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_stack
 
 void	error_msg(char *str);
 void	check_input_string(char **argv, t_stack *stack);
-void	check_input_args(char **argv, int argc, t_stack *stack);
+void	check_input_args(char **argv, int argc, t_stack *stack, int check);
 void	ft_malloc(t_stack *stack, int i);
 void	ft_free(t_stacks *stack);
 int		get_int_min(t_stacks *stack);
@@ -50,4 +50,5 @@ int		*to_radix(t_stacks *stack, int *copy);
 int		*get_ordered_array(t_stacks *stack, int *copy);
 int		check_order(t_stack *stack);
 void	preliminary_check(t_stacks *stack);
+int		check_args_is_int_2(char *argv);
 #endif

@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 15:48:45 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/06 01:46:51 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/06 23:07:15 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ int	check_args_is_int_2(char *argv)
 		 {
 			 if (argv[i] != '-')
 				return (0);
+			 else if (argv[i] == '-')
+			 {
+				 if (ft_isdigit(argv[i + 1]) != 1)
+				 	return (0);
+			 }
 		 }
 		i++;
 	}
@@ -76,14 +81,14 @@ static int	check_args_is_int(char *argv, int *nbr, int i)
 }
 
 
-void	check_input_args(char **argv, int argc, t_stack *stack, int	check)
+void	check_input_args(char **argv, int argc, t_stack *stack, bool check)
 {
 	int	i;
 	int	j;
 	(void) argc;
 	i = 0;
 	j = 0;
-	if (check == 1)
+	if (check == false)
 		i = 1;
 	while (argv[j])
 		j++;

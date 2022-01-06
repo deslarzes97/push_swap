@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:05:57 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/06 01:36:25 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/06 22:52:20 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int	main (int argc, char **argv)
 	if (argc == 1)
 	{
 		temp = ft_split(argv[1], ' ');
-		check_input_args(temp, argc, stacks.stack_a, 0);
+		check_input_args(temp, argc, stacks.stack_a, true);
 	}
 	else
-		check_input_args(argv, argc, stacks.stack_a, 1);
+		check_input_args(argv, argc, stacks.stack_a, false);
 	copy = get_ordered_array(&stacks, copy);
 	stacks.stack_a->number = to_radix(&stacks, copy);
 	preliminary_check(&stacks);

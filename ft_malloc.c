@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 22:25:18 by desa              #+#    #+#             */
-/*   Updated: 2022/01/07 23:08:58 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/08 00:48:51 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,4 @@ void	ft_free(t_stacks *stack, int *copy)
 	free(stack->stack_a);
 	free(stack->stack_b);
 	free(copy);
-}
-
-void	ft_free_split(char **temp)
-{
-	int	i;
-
-	i = 0;
-	while(temp[++i])
-		free(temp[i]);
-	free(temp);
 }

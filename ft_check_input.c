@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 15:48:45 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/07 22:35:12 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/08 00:32:59 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,15 @@ int	check_args_is_int_2(char *argv)
 	while (argv[i])
 	{
 		if (ft_isdigit(argv[i]) != 1)
-		 {
-			 if (argv[i] != '-')
+		{
+			if (argv[i] != '-')
 				return (0);
-			 else if (argv[i] == '-')
-			 {
-				 if (ft_isdigit(argv[i + 1]) != 1)
-				 	return (0);
-			 }
-		 }
+			else if (argv[i] == '-')
+			{
+				if (ft_isdigit(argv[i + 1]) != 1)
+					return (0);
+			}
+		}
 		i++;
 	}
 	return (1);
@@ -58,10 +58,10 @@ int	check_args_is_int_2(char *argv)
 
 static int	check_args_is_int(char *argv, int *nbr, int i)
 {
-	long int temp;
+	long int	temp;
 
 	if (check_args_is_int_2(argv) == 0)
-		return(0);
+		return (0);
 	if (argv[0] == '0')
 	{
 		nbr[i] = 0;
@@ -90,7 +90,7 @@ void	check_input_args(char **argv, t_stack *stack, int check)
 	stack->number = malloc(sizeof(long int) * j);
 	while (argv[i])
 	{
-		if (!check_args_is_int(argv[i], stack->number, l) ||
+		if (!check_args_is_int(argv[i], stack->number, l) || \
 			!check_duplicate(stack->number, l))
 		{
 			free(stack->number);

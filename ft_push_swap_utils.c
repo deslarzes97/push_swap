@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 20:17:43 by desa              #+#    #+#             */
-/*   Updated: 2022/01/06 23:33:31 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/08 00:51:55 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check_order(t_stack *stack)
 	{
 		exit (0);
 	}
-	temp =	stack->number[i];
+	temp = stack->number[i];
 	while (i < stack->len - 1)
 	{
 		if (temp > stack->number[i + 1])
@@ -42,7 +42,6 @@ int	get_int_min(t_stacks *stack)
 	min = stack->stack_a->number[i];
 	while (i < stack->stack_a->len)
 	{
-
 		if (min > stack->stack_a->number[i])
 			min = stack->stack_a->number[i];
 		i++;
@@ -59,7 +58,6 @@ int	get_int_max(t_stacks *stack)
 	max = stack->stack_a->number[i];
 	while (i < stack->stack_a->len)
 	{
-
 		if (max < stack->stack_a->number[i])
 			max = stack->stack_a->number[i];
 		i++;

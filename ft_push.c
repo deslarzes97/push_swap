@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:51:55 by desa              #+#    #+#             */
-/*   Updated: 2022/01/05 19:19:47 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/08 00:51:17 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static void	redefine_stack(t_stack *stack)
 		stack->number[i] = stack->number[i + 1];
 		i++;
 	}
-
 }
 
 int	*push_a(t_stacks *stack)

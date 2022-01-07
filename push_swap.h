@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:06:34 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/07 23:10:11 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/08 00:48:57 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,4 @@ int		*to_radix(t_stacks *stack, int *copy);
 int		*get_ordered_array(t_stacks *stack, int *copy);
 int		check_order(t_stack *stack);
 int		check_args_is_int_2(char *argv);
-void	ft_free_split(char **temp);
 #endif

@@ -6,13 +6,13 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:05:57 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/07 23:28:23 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/08 00:48:44 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stacks	stacks;
 	int			*copy;
@@ -29,7 +29,6 @@ int	main (int argc, char **argv)
 	{
 		temp = ft_split(argv[1], ' ');
 		check_input_args(temp, stacks.stack_a, 0);
-		ft_free_split(temp);
 	}
 	else
 		check_input_args(argv, stacks.stack_a, 1);

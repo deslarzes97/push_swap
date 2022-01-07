@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_slove.c                                   :+:      :+:    :+:   */
+/*   ft_check_solve.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 14:21:54 by desa              #+#    #+#             */
-/*   Updated: 2022/01/05 21:57:24 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/08 00:50:59 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,8 @@ static void	solve_five(t_stacks *stack)
 	max = get_int_max(stack);
 	while (i < stack->stack_a->len)
 	{
-		if (stack->stack_a->number[0] == min || stack->stack_a->number[0] == max)
+		if (stack->stack_a->number[0] == min || \
+			stack->stack_a->number[0] == max)
 		{
 			i = -1;
 			stack->stack_b->number = push_b(stack);

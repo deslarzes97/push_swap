@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 14:07:04 by desa              #+#    #+#             */
-/*   Updated: 2022/01/05 20:43:18 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/07 02:12:37 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_swap(int *number1, int *number2)
 	*number2 = temp;
 }
 
-int	*get_ordered_array(t_stacks *stack, int *copy)
+int	*get_ordered_array(t_stacks *stacks, int *copy)
 {
 	int	len;
 	int	i;
@@ -29,10 +29,10 @@ int	*get_ordered_array(t_stacks *stack, int *copy)
 
 	i = -1;
 	j = 1;
-	len = stack->stack_a->len;
+	len = stacks->stack_a->len;
 	copy = malloc(sizeof(int) * len);
 	while (++i < len)
-		copy[i] = stack->stack_a->number[i];
+		copy[i] = stacks->stack_a->number[i];
 	i = 0;
 	while (i < len)
 	{
@@ -48,7 +48,7 @@ int	*get_ordered_array(t_stacks *stack, int *copy)
 	return (copy);
 }
 
-int	*to_radix(t_stacks *stack, int *copy)
+int	*to_radix(t_stacks *stacks, int *copy)
 {
 	int	i;
 	int	j;
@@ -56,14 +56,14 @@ int	*to_radix(t_stacks *stack, int *copy)
 	int	*new_stack;
 
 	i = 0;
-	len = stack->stack_a->len;
+	len = stacks->stack_a->len;
 	new_stack = malloc(sizeof(int) * len);
 	while (i < len)
 	{
 		j = 0;
 		while (j < len)
 		{
-			if (stack->stack_a->number[i] == copy[j])
+			if (stacks->stack_a->number[i] == copy[j])
 			{
 				new_stack[i] = j;
 			}
@@ -71,6 +71,6 @@ int	*to_radix(t_stacks *stack, int *copy)
 		}
 		i++;
 	}
-	free(stack->stack_a->number);
+	free(stacks->stack_a->number);
 	return (new_stack);
 }

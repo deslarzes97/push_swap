@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 15:48:45 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/06 23:07:15 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/07 00:51:28 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,11 @@ static int	check_args_is_int(char *argv, int *nbr, int i)
 }
 
 
-void	check_input_args(char **argv, int argc, t_stack *stack, bool check)
+void	check_input_args(char **argv, t_stack *stack, bool check)
 {
 	int	i;
 	int	j;
-	(void) argc;
+
 	i = 0;
 	j = 0;
 	if (check == false)
@@ -104,7 +104,6 @@ void	check_input_args(char **argv, int argc, t_stack *stack, bool check)
 			exit(0);
 		}
 		i++;
-		//argc--;
 	}
 	stack->len = i;
 }

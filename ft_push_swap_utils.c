@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 20:17:43 by desa              #+#    #+#             */
-/*   Updated: 2022/01/05 19:14:46 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/06 23:33:31 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ int	check_order(t_stack *stack)
 	int	temp;
 
 	i = 0;
+	if (stack->number == NULL)
+	{
+		exit (0);
+	}
 	temp =	stack->number[i];
 	while (i < stack->len - 1)
 	{

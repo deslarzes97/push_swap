@@ -6,11 +6,18 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 22:25:18 by desa              #+#    #+#             */
-/*   Updated: 2022/01/05 21:00:40 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/06 23:45:27 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_malloc(t_stacks *stacks)
+{
+	stacks->stack_a = malloc(sizeof(t_stack));
+	stacks->stack_b = malloc(sizeof(t_stack));
+	stacks->stack_b->number = malloc(sizeof(t_stack));
+}
 
 void	ft_free(t_stacks *stack)
 {

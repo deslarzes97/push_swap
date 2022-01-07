@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 11:43:22 by desa              #+#    #+#             */
-/*   Updated: 2022/01/07 01:51:36 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/07 14:12:55 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 
 static	int	get_max_bits(t_stacks *stack)
 {
-	int	i;
-	int	size;
 	int	temp;
 	int	max_bits;
 
 	max_bits = 0;
-	i = 0;
-	size = stack->stack_a->len;
 	temp = get_int_max(stack);
 	while (temp >> max_bits != 0)
 		max_bits++;

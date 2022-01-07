@@ -6,7 +6,7 @@
 /*   By: desa <desa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:05:57 by adeslarz          #+#    #+#             */
-/*   Updated: 2022/01/07 01:58:48 by desa             ###   ########.fr       */
+/*   Updated: 2022/01/07 23:10:35 by desa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main (int argc, char **argv)
 {
 	t_stacks	stacks;
 	int			*copy;
-	char	**temp;
+	char		**temp;
 
 	copy = NULL;
 	ft_malloc(&stacks);
@@ -41,15 +41,16 @@ int	main (int argc, char **argv)
 	{
 		//check_is_args_null(argv[1], &stacks);
 		temp = ft_split(argv[1], ' ');
-		check_input_args(temp, stacks.stack_a, true);
+		check_input_args(temp, stacks.stack_a, 0);
+		ft_free_split(temp);
 	}
 	else
-		check_input_args(argv, stacks.stack_a, false);
+		check_input_args(argv, stacks.stack_a, 1);
 	copy = get_ordered_array(&stacks, copy);
 	stacks.stack_a->number = to_radix(&stacks, copy);
 	preliminary_check(&stacks);
 	if (!check_order(stacks.stack_a))
 		ft_algo(&stacks);
-	ft_free(&stacks);
+	ft_free(&stacks, copy);
 	return (0);
 }

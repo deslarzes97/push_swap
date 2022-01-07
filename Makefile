@@ -6,7 +6,7 @@
 #    By: desa <desa@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 11:47:01 by adeslarz          #+#    #+#              #
-#    Updated: 2022/01/05 21:46:14 by desa             ###   ########.fr        #
+#    Updated: 2022/01/07 23:19:08 by desa             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,11 @@ SRCS =	main.c\
 		ft_push.c\
 		ft_algo.c\
 		ft_radix_sort.c\
-		ft_check_slove.c\
+		ft_check_solve.c\
 
 NAME		= push_swap
 
-CFLAGS 		= -g -fsanitize=address -Wall -Wextra -Werror
+CFLAGS 		= -g -Wall -Wextra -Werror
 
 OBJS 		= ${SRCS:.c=.o}
 

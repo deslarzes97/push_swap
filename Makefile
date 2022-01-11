@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: desa <desa@student.42.fr>                  +#+  +:+       +#+         #
+#    By: adeslarz <adeslarz@42lausanne.ch>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 11:47:01 by adeslarz          #+#    #+#              #
-#    Updated: 2022/01/07 23:36:46 by desa             ###   ########.fr        #
+#    Updated: 2022/01/11 12:50:16 by adeslarz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,16 +40,13 @@ LIBFT =  libft.a
 
 FRAMLIBS	= -L $(LIBFT_DIR) -lft
 
-all: ${LIBFT} ${FT_PRINTF} ${NAME}
+all: ${LIBFT} ${NAME}
 
 $(NAME): 	$(OBJS)
 			$(CC) $(CFLAGS) -I $(LIBFT_DIR) -o $(NAME) $(OBJS) $(FRAMLIBS)
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
-
-$(FT_PRINTF):
-	make -C $(FT_PRINTF_DIR)
 
 %.o : %.c
 			$(CC) -c $(CFLAGS) $< -o $@
@@ -64,5 +61,3 @@ fclean: 	clean
 re:			fclean all
 
 .PHONY: 	all clean fclean re
-
-#-g -fsanitize=address
